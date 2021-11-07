@@ -75,7 +75,7 @@ provider.on('block', async (blockNumber) => {
     const lastBlockTimestamp = moment.unix(firstBlock.rows[0].timestamp)
     const newBlockTimestamp = moment.unix(block.timestamp)
 
-    if (!lastBlockTimestamp.isSame(newBlockTimestamp, 'minutes')) {
+    if (!lastBlockTimestamp.isSame(newBlockTimestamp, 'days')) {
       await callSmartContract(lastBlockTimestamp)
     }
 
@@ -90,7 +90,7 @@ provider.on('error', (err) => {
 })
 
 async function callSmartContract(lastBlockTimestamp: moment.Moment) {
-  const startTimestamp = lastBlockTimestamp.clone().startOf('minutes').unix()
+  const startTimestamp = lastBlockTimestamp.clone().startOf('days').unix()
 
   const { rows } = await client.query(queryBlocksBetweenTimestamps, [
     startTimestamp.toString(), lastBlockTimestamp.unix().toString()
