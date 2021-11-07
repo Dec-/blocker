@@ -129,5 +129,7 @@ dist
 
 # Custom
 build
+cache
+artifacts
 
 # End of https://www.toptal.com/developers/gitignore/api/node

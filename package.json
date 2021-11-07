@@ -4,28 +4,30 @@
   "description": "Write blocks and transactions to DB and send to SC",
   "main": "app.ts",
   "scripts": {
-    "build": "tsc",
-    "start": "node build/app.js",
-    "dev": "ts-node-dev src/app.ts",
-    "test": "mocha -r ts-node/register test/test.ts --exit",
+    "start": "ts-node-dev src/app.ts",
+    "test": "npx hardhat test",
     "fix": "tslint --fix -c tslint.json '**/*.ts'"
   },
   "author": "Filip Kaić",
   "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
     "@types/chai": "^4.2.22",
     "@types/mocha": "^9.0.0",
+    "@types/node": "^16.11.6",
     "@types/pg": "^8.6.1",
+    "chai": "^4.3.4",
+    "ethereum-waffle": "^3.4.0",
+    "hardhat": "^2.6.8",
     "ts-node": "^10.4.0",
     "ts-node-dev": "^1.1.8",
-    "tslint": "^6.1.3"
+    "tslint": "^6.1.3",
+    "typescript": "^4.4.4"
   },
   "dependencies": {
-    "chai": "^4.3.4",
     "dotenv": "^10.0.0",
     "ethers": "^5.5.1",
-    "mocha": "^9.1.3",
     "moment": "^2.29.1",
-    "pg": "^8.7.1",
-    "typescript": "^4.4.4"
+    "pg": "^8.7.1"
   }
 }

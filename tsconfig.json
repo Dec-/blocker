@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es2018",
     "module": "commonjs",
-    "outDir": "./build",
-    "rootDir": "./src",
-    "moduleResolution": "node",
     "esModuleInterop": true,
+    "outDir": "build"
   },
+  "include": ["./scripts", "./test", "./src"],
+  "files": ["./hardhat.config.ts"],
   "exclude": [
     "./node_modules"
   ]
